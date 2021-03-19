@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useData } from "../../service/contexts";
 import Xarrow from "react-xarrows";
 import { useHints } from "../../service/contexts";
-import {Loading} from "../Loading";
+import { Loading } from "../Loading";
 
 export const Arrows = () => {
   const { data } = useData();
@@ -24,7 +24,7 @@ export const Arrows = () => {
     setTimeout(() => setLoading(false), 2000);
   }, [setLoading]);
 
-  if (loading) return <Loading />
+  if (loading) return <Loading />;
 
   return (
     <>
