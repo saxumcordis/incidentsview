@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { GraphContainer } from "./components/GraphContainer";
 
-function App() {
+import { DataProvider } from "./service/contexts/useData";
+import { Legend } from "./components/Legend";
+import { HintsProvider } from "./service/contexts/useHints";
+import { TimeInfo } from "./components/TimeInfo";
+import { IncidentInfo } from "./components/IncidentInfo";
+import { DropZone } from "./components/DropZone";
+
+export const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ marginTop: "50px" }}>
+      <DataProvider>
+        <HintsProvider>
+          <Legend />
+          <GraphContainer />
+          <TimeInfo />
+          <IncidentInfo />
+          <DropZone />
+        </HintsProvider>
+      </DataProvider>
     </div>
   );
-}
-
-export default App;
+};
