@@ -8,7 +8,7 @@ import { TimeInfo } from "./components/TimeInfo";
 import { IncidentInfo } from "./components/IncidentInfo";
 import { DropZone } from "./components/DropZone";
 
-export const App = () => {
+const App = () => {
   return (
     <div className="App" style={{ marginTop: "50px" }}>
       <DataProvider>
@@ -23,3 +23,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;
