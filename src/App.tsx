@@ -8,15 +8,15 @@ import { TimeInfo } from "./components/TimeInfo";
 import { IncidentInfo } from "./components/IncidentInfo";
 import { DropZone } from "./components/DropZone";
 
+import styles from './index.module.scss';
+
 const App = () => {
   return (
-    <div className="App" style={{ marginTop: "50px" }}>
+    <div className={styles.container}>
       <DataProvider>
         <HintsProvider>
-          <Legend />
-          <GraphContainer />
-          <TimeInfo />
-          <IncidentInfo />
+          <div className={styles.column}> <Legend /><IncidentInfo /></div>
+          <div className={styles.column}><GraphContainer /></div>
           <DropZone />
         </HintsProvider>
       </DataProvider>

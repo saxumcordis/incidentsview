@@ -15,7 +15,7 @@ export const HorizontalLine = () => {
         className={styles.horizontalLine}
         style={{
           top: 5 + acNamesPalette!.length * steps![0] + "%",
-          minWidth: 8 * minWidth! + "px",
+          width: 8 * minWidth! + "px",
         }}
       >
         {uniqueDates?.map((e, i) => (

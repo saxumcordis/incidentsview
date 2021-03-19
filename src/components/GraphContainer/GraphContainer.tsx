@@ -22,10 +22,7 @@ export const GraphContainer = () => {
       <HorizontalLine />
       <div
         className={styles.incidentBoxesContainer}
-        style={{
-          minWidth: 8 * minWidth! + "px",
-          minHeight: 9 * minHeight! + "px",
-        }}
+        style={{width: 8*minWidth! + 'px'}}
       >
         {data?.nodes &&
           data.nodes.map((e, i) => <IncidentBox key={i} incident={e} />)}

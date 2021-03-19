@@ -4,6 +4,7 @@ import { useHints } from "../../service/contexts";
 import styles from "./IncidentInfo.module.scss";
 import { useData } from "../../service/contexts";
 import { COLORS } from "../../assets/COLORS";
+import {TimeInfo} from "../TimeInfo";
 
 export const IncidentInfo = () => {
   const { incidentHovered } = useHints();
@@ -38,6 +39,7 @@ export const IncidentInfo = () => {
           {!!children.length && <span>Дети: {children.join(",")}</span>}
         </>
       )}
+      <TimeInfo />
     </div>
   );
 };

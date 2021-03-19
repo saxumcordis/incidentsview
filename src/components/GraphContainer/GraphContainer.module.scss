@@ -1,6 +1,6 @@
 .container {
-  width: 1000px;
-  height: 1000px;
+  display: flex;
+  flex-grow: 1;
   position: relative;
   margin-top: 50px;
   overflow: scroll;
@@ -8,7 +8,6 @@
 
 .incidentBoxesContainer {
   position: relative;
-  height: 70%;
+  height: 100%;
   margin-left: 131px;
-  width: 1000px;
 }
