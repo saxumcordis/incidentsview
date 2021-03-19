@@ -29,7 +29,7 @@ export const HintsProvider: React.FC = ({ children }) => {
   const [visiblePriorities, setVisiblePriorities] = useState<string[]>([]);
   const [visibleAcNames, setVisibleAcNames] = useState<string[]>([]);
 
-  const [isVisibleAllPriorities, setVisibleAllPriorities] = useState(false);
+  const [isVisibleAllPriorities, setVisibleAllPriorities] = useState(true);
   const [isVisibleAllAcNames, setVisibleAllAcNames] = useState(true);
 
   const [isVisibleAllIncidentHints, setVisibleAllIncidentHints] = useState(
@@ -44,13 +44,13 @@ export const HintsProvider: React.FC = ({ children }) => {
   const { priorityPalette, acNamesPalette } = useData();
 
   useEffect(() => {
-    if ([0, priorityPalette!.length].includes(visiblePriorities.length))
+    if ([priorityPalette!.length].includes(visiblePriorities.length))
       setVisibleAllPriorities(true);
     else setVisibleAllPriorities(false);
   }, [priorityPalette, visiblePriorities, setVisibleAllPriorities]);
 
   useEffect(() => {
-    if ([0, acNamesPalette!.length].includes(visibleAcNames.length))
+    if ([acNamesPalette!.length].includes(visibleAcNames.length))
       setVisibleAllAcNames(true);
     else setVisibleAllAcNames(false);
   }, [acNamesPalette, visibleAcNames, setVisibleAllAcNames]);

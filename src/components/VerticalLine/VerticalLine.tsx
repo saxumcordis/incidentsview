@@ -21,7 +21,9 @@ export const VerticalLine = () => {
     (priority) => {
       if (visibleAcNames?.includes(priority))
         setVisibleAcNames?.(visibleAcNames.filter((e) => e !== priority));
-      else setVisibleAcNames?.(visibleAcNames!.concat([priority]));
+      else {
+        setVisibleAcNames?.(visibleAcNames!.concat([priority]));
+      }
     },
     [visibleAcNames, setVisibleAcNames]
   );
@@ -34,12 +36,14 @@ export const VerticalLine = () => {
   });
 
   const handleAllAcNamesVisible = useCallback(() => {
+    if (isVisibleAllAcNames)
+      setVisibleAcNames!([]);
     setVisibleAllAcNames!(!isVisibleAllAcNames);
-  }, [setVisibleAllAcNames, isVisibleAllAcNames]);
+  }, [setVisibleAllAcNames, isVisibleAllAcNames, setVisibleAcNames]);
   return (
     <div className={styles.verticalLine} ref={verticalLineRef}>
       <span className={styles.verticalText} onClick={handleAllAcNamesVisible}>
-        {isVisibleAllAcNames ? "Назад" : "Показать все"}
+        {isVisibleAllAcNames ? "Скрыть все" : "Показать все"}
       </span>
       {acNamesPalette?.map((e, i) => {
         const isAcNameVisible =

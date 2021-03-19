@@ -20,14 +20,16 @@ export const Legend = () => {
     (priority) => {
       if (visiblePriorities?.includes(priority))
         setVisiblePriorities?.(visiblePriorities.filter((e) => e !== priority));
-      else setVisiblePriorities?.(visiblePriorities!.concat([priority]));
+      else {setVisiblePriorities?.(visiblePriorities!.concat([priority]));}
     },
     [visiblePriorities, setVisiblePriorities]
   );
 
   const handleAllPriorityVisible = useCallback(() => {
+    if (isVisibleAllPriorities)
+      setVisiblePriorities!([])
     setVisibleAllPriorities!(!isVisibleAllPriorities);
-  }, [setVisibleAllPriorities, isVisibleAllPriorities]);
+  }, [setVisibleAllPriorities, isVisibleAllPriorities, setVisiblePriorities]);
 
   return (
     <div className={styles.legendContainer}>
@@ -69,7 +71,7 @@ export const Legend = () => {
       <div className={styles.priorityBox} onClick={handleAllPriorityVisible}>
         <span className={styles.colorCircle} />
         <label className={styles.priorityText}>
-          {isVisibleAllPriorities ? "Назад" : "Показать все"}
+          {isVisibleAllPriorities ? "Скрыть все" : "Показать все"}
         </label>
       </div>
     </div>
