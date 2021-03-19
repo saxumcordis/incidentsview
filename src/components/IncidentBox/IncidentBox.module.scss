@@ -1,0 +1,8 @@
+.incidentBox {
+  position: absolute;
+  display: flex;
+  left: 20%;
+  border: 1px solid black;
+  z-index: 3;
+  cursor: pointer;
+}
