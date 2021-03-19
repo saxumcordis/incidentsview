@@ -1,0 +1,19 @@
+.incidentInfoContainer {
+  position: fixed;
+  display: flex;
+  border: 1px solid black;
+  width: 200px;
+  height: 200px;
+  right: 160px;
+  top: 100px;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 5px;
+  font-size: 13px;
+  color: wheat;
+  font-weight: 600;
+
+  & > span:not(:first-child) {
+    margin-top: 5px;
+  }
+}
