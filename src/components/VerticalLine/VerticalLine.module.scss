@@ -1,0 +1,26 @@
+.verticalLine {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  width: 130px;
+  height: 100%;
+  --after-height: 0;
+  &::after {
+    border-right: 5px solid #000;
+    content: "";
+    height: var(--after-height);
+    position: absolute;
+    right: 0;
+  }
+}
+
+.verticalText {
+  position: absolute;
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  z-index: 2;
+  color: wheat;
+  cursor: pointer;
+}
