@@ -1,0 +1,32 @@
+.legendContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 200px;
+  position: fixed;
+  left: 0;
+  height: 600px;
+}
+
+.priorityBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: wheat;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.colorCircle {
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: 1px 5px 2px #282c34;
+  background: #282c34;
+}
+
+.priorityText {
+  margin-top: 10px;
+}
